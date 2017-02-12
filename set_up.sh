@@ -56,13 +56,13 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build &> /tmp/set_up_log
-rbenv install 2.3.0 &> /tmp/set_up_log
-rbenv global 2.3.0 &> /tmp/set_up_log
+rbenv install 2.3.0
+rbenv global 2.3.0
 echo "gem: --no-document" > ~/.gemrc
-gem install bundler &> /tmp/set_up_log
+gem install bundler
 # -- Ruby on Rails
 echo "Installing Ruby on Rails..."
-gem install rails &> /tmp/set_up_log
+gem install rails
 
 
 # LAMP
@@ -105,5 +105,14 @@ echo -e "\e[39m"
 echo -e "\e[33mDon't forget to copy config files into your home directory: .bashrc, .zshrc and .vimrc"
 
 # Post-installation tasks
+# -- Remove useless files
 rm google-chrome*.deb
 rm /tmp/set_up_log
+rm .bashrc &> /tmp/set_up_log
+rm .zshrc &> /tmp/set_up_log
+rm .vimrc &> /tmp/set_up_log
+# -- Download config files
+wget https://raw.githubusercontent.com/lucashour/dotfiles/master/.bashrc &> /tmp/set_up_log
+wget https://raw.githubusercontent.com/lucashour/dotfiles/master/.zshrc &> /tmp/set_up_log
+wget https://raw.githubusercontent.com/lucashour/dotfiles/master/.vimrc &> /tmp/set_up_log
+
