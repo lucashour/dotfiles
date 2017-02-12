@@ -1,0 +1,130 @@
+execute pathogen#infect()
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set guioptions-=T
+
+set grepprg=ack " File searching
+
+set guioptions-=T " Removes top toolbar
+set guioptions-=r " Removes right hand scroll bar
+set go-=L " Removes left hand scroll bar
+autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
+
+set wildmenu
+set mouse=a
+set clipboard=unnamed " Clipboard
+
+"au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline guibg=green
+
+" default the statusline to green when entering Vim
+hi statusline guibg=green
+
+" strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" highlight conflicts
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+set relativenumber
+
+" ========================================================================
+" Programming languages stuff
+" ========================================================================
+
+augroup myfiletypes
+  autocmd!
+  " autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,eruby,yaml,html,css,javascript,php,coffee setlocal ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml setlocal path+=lib
+  autocmd FileType ruby,eruby,yaml setlocal colorcolumn=80
+  " Make ?s part of words
+  autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
+augroup END
+
+" ========================================================================
+
+
+" ========================================================================
+" Mappings
+" ========================================================================
+
+let mapleader = ","
+map <Leader>ac :sp app/controllers/application_controller.rb<cr>
+map <Leader>bb :!bundle install<cr>
+map <Leader>gl :e Gemfile.lock<cr>
+map <Leader>sc :sp db/schema.rb<cr>
+map <Leader>sp :sp <cr>
+map <Leader>vs :vs <cr>
+
+" shortcut to save
+nmap <leader>, :w<cr>
+
+" shortcut to quit
+nmap <leader>q :q<cr>
+
+" Paste mode
+vmap <leader>p :set paste
+vmap <leader>np :set nopaste
+
+" Search with CtrlP
+vmap <c-p> :CtrlP
+vmap 'CtrlP' :CtrlP
+
+" Explore mode
+nmap <leader>e :Explore<cr>
+
+" Swithching between tabs
+map <c-S-Up> <c-w><Up>
+map <c-S-Down> <c-w><Down>
+map <c-S-Right> <c-w><Right>
+map <c-S-Left> <c-w><Left>
+
+" ========================================================================
+
+
+" ========================================================================
+" Functions
+" ========================================================================
+
+set history=500 " keep 500 lines of command line history
+set ruler " show the cursor position all the time
+
+" ========================================================================
+
+
+" ========================================================================
+" Plugins
+" ========================================================================
+
+" NERDTree
+let g:NERDTreeWinPos = "right" " position
+let g:NERDTreeHijackNetrw=0 " closed by default
+let g:NERDTreeQuitOnOpen=1 " close after opening a file
+let NERDTreeShowHidden=1 " show hidden files
+nmap <silent> <leader>k :NERDTreeToggle<cr>
+nmap <silent> <leader>y :NERDTreeFind<cr>
+
+" CtrlP
+nnoremap <silent> <leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
+
+" Theme and visual customization
+set t_Co=256
+set background=dark
+colorscheme Tomorrow-Night-Bright
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+let g:airline_powerline_fonts = 1
+
+" Powerline
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
+
+" General settings
+syntax on
+filetype off
+filetype plugin indent on
+filetype plugin on
+
+" ========================================================================
