@@ -13,6 +13,7 @@ sudo apt-get -y update &> /tmp/set_up_log
 echo "Installing general utilities..."
 sudo apt-get -y install git git-core &> /tmp/set_up_log
 sudo apt-get -y install git-flow &> /tmp/set_up_log
+git config --global color.ui true
 sudo apt-get -y install curl &> /tmp/set_up_log
 sudo apt-get -y install wget &> /tmp/set_up_log
 sudo apt-get -y install nodejs &> /tmp/set_up_log
@@ -27,7 +28,7 @@ sudo apt-get -y install ubuntu-restricted-extras &> /tmp/set_up_log
 
 # Vim
 echo "Installing Vim..."
-sudo apt-get -y install vim &> /tmp/set_up_log
+sudo apt-get -y install vim vim-gtk &> /tmp/set_up_log
 
 # Google Chrome
 echo "Installing Google Chrome..."
@@ -50,12 +51,14 @@ sudo apt-get -y install spotify-client &> /tmp/set_up_log
 # Ruby and RoR
 # -- rbenv and Ruby
 echo "Installing rbenv and Ruby..."
-sudo apt-get -y install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev &> /tmp/set_up_log
+sudo apt-get -y install autoconf bison build-essential libssl-dev libyaml-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev &> /tmp/set_up_log
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv &> /tmp/set_up_log
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-source ~/.bashrc
+exec $SHELL
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build &> /tmp/set_up_log
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
 rbenv install 2.3.0
 rbenv global 2.3.0
 echo "gem: --no-document" > ~/.gemrc
@@ -74,7 +77,7 @@ sudo systemctl restart apache2 &> /tmp/set_up_log
 # -- MySQL
 echo "Installing MySQL..."
 echo -e "\e[39m\n"
-sudo apt-get -y install mysql-server
+sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
 sudo mysql_secure_installation
 echo -e "\e[39m\n\n"
 # -- PHP
