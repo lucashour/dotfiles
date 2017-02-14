@@ -103,19 +103,23 @@ echo 'eval "$(rbenv init -)"' >> ~/.zshrc
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 echo -e "\e[39m"
-echo -e "\e[32mInstallation finished! :D"
+echo -e "\e[32mInstallation finished! Wait just a moment..."
 echo -e "\e[39m"
-echo -e "\e[33mDon't forget to copy config files into your home directory: .bashrc, .zshrc and .vimrc"
 
 # Post-installation tasks
 # -- Remove useless files
+echo "Removing temporal files..."
 rm google-chrome*.deb
 rm /tmp/set_up_log
 rm .bashrc &> /tmp/set_up_log
 rm .zshrc &> /tmp/set_up_log
 rm .vimrc &> /tmp/set_up_log
 # -- Download config files
+echo "Downloading configuration files..."
 wget https://raw.githubusercontent.com/lucashour/dotfiles/master/.bashrc &> /tmp/set_up_log
 wget https://raw.githubusercontent.com/lucashour/dotfiles/master/.zshrc &> /tmp/set_up_log
 wget https://raw.githubusercontent.com/lucashour/dotfiles/master/.vimrc &> /tmp/set_up_log
 
+echo -e "\e[32mFinished!"
+echo -e "\e[32mEnjoy! :D"
+echo -e "\e[39m"
