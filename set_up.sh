@@ -24,7 +24,7 @@ sudo apt-get -y install openssh-server &> /tmp/set_up_log
 
 # Media codecs
 echo "Installing media codecs..."
-sudo apt-get -y install ubuntu-restricted-extras &> /tmp/set_up_log
+sudo apt-get -y install ubuntu-restricted-extras
 
 # Vim
 echo "Installing Vim..."
