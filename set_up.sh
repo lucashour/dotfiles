@@ -13,7 +13,7 @@ echo "Installing general utilities..."
 sudo apt-get -y install git git-core
 sudo apt-get -y install git-flow
 git config --global color.ui true
-sudo apt-get install libgnome-keyring-dev
+sudo apt-get -y install libgnome-keyring-dev
 sudo make --directory=/usr/share/doc/git/contrib/credential/gnome-keyring
 git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 sudo apt-get -y install curl
@@ -22,6 +22,10 @@ sudo apt-get -y install npm
 sudo apt-get -y install libmagic-dev
 sudo apt-get -y install ack-grep
 sudo apt-get -y install openssh-server
+sudo apt-get -y install speedcrunch
+sudo add-apt-repository ppa:synapse-core/ppa
+sudo apt-get update
+sudo apt-get -y install synapse
 
 # Media codecs
 echo "Installing media codecs..."
