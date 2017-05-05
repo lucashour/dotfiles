@@ -42,9 +42,11 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 sudo apt-get -yf install
 
-# VLC
+# VLC and DVD support
 echo "Installing VLC..."
 sudo apt-get -y install vlc
+sudo apt-get -y install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
 
 # Spotify
 echo "Installing Spotify..."
