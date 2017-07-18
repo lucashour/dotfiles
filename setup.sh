@@ -5,8 +5,8 @@ cd $HOME
 echo -e "\e[32mStarting setup process..."
 echo -e "\e[39m"
 echo "Updating repos and dependencies..."
-sudo apt-get -y upgrade
 sudo apt-get -y update
+sudo apt-get -y upgrade
 
 # General utilities
 echo "Installing general utilities..."

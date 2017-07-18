@@ -7,7 +7,7 @@ Este repositorio tiene la finalidad de agilizar la instalación de herramientas 
 
 Para correr el script de instalación con sólo un comando, ejecutar la siguiente sentencia desde la línea de comandos:
 
-```$ wget -O - https://raw.githubusercontent.com/lucashour/dotfiles/master/set_up.sh | bash```
+```$ wget -O - https://raw.githubusercontent.com/lucashour/dotfiles/master/setup.sh | bash```
 
 El script instala diversos programas juntos a sus dependencias, y descarga los archivos de configuración de Bash, Zsh y Vim. Configura, además, a Zsh como shell por defecto.
 
