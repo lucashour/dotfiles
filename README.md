@@ -1,5 +1,5 @@
 # dotfiles
-### Scripts de instalación y archivos de configuración del sistema y de diferentes herramientas###
+### Scripts de instalación y archivos de configuración del sistema y de diferentes herramientas
 
 Este repositorio tiene la finalidad de agilizar la instalación de herramientas y programas básicos de un sistema Ubuntu 64 bits, así como también de sincronizar los archivos de configuración de Bash, Zsh y Vim.
 
