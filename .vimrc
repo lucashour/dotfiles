@@ -71,6 +71,10 @@ vmap <leader>np :set nopaste
 vmap <c-p> :CtrlP
 vmap 'CtrlP' :CtrlP
 
+" Async ack
+let g:ack_use_dispatch = 1
+nmap <leader>g :Grepper<cr>
+
 " Explore mode
 nmap <leader>e :Explore<cr>
 
@@ -79,6 +83,9 @@ map <c-S-Up> <c-w><Up>
 map <c-S-Down> <c-w><Down>
 map <c-S-Right> <c-w><Right>
 map <c-S-Left> <c-w><Left>
+
+" Search selected text on Visual Mode
+vnoremap // y/<C-R>"<CR>
 
 " ========================================================================
 
@@ -98,12 +105,15 @@ set ruler " show the cursor position all the time
 " ========================================================================
 
 " NERDTree
-let g:NERDTreeWinPos = "right" " position
+let g:NERDTreeWinPos = "left" " position
 let g:NERDTreeHijackNetrw=0 " closed by default
 let g:NERDTreeQuitOnOpen=1 " close after opening a file
 let NERDTreeShowHidden=1 " show hidden files
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 nmap <silent> <leader>y :NERDTreeFind<cr>
+
+" Tagbar
+nmap <silent> <leader>t :Tagbar<cr>
 
 " CtrlP
 nnoremap <silent> <leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
@@ -126,5 +136,8 @@ syntax on
 filetype off
 filetype plugin indent on
 filetype plugin on
+
+"
+let g:vim_jsx_pretty_colorful_config = 1
 
 " ========================================================================

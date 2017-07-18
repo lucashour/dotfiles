@@ -3,7 +3,7 @@
 
 Este repositorio tiene la finalidad de agilizar la instalación de herramientas y programas básicos de un sistema Ubuntu 64 bits, así como también de sincronizar los archivos de configuración de Bash, Zsh y Vim.
 
-> ### set_up.sh
+> ### setup.sh
 
 Para correr el script de instalación con sólo un comando, ejecutar la siguiente sentencia desde la línea de comandos:
 

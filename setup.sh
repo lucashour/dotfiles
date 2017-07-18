@@ -33,6 +33,8 @@ sudo apt-get -y install ubuntu-restricted-extras
 
 # Vim
 echo "Installing Vim..."
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt-get update
 sudo apt-get -y install vim vim-gtk
 
 # Google Chrome
