@@ -98,23 +98,11 @@ fi
 
 ### ALIAS
 
-# Projects
-# -- Freelance
-alias felanix='cd ~/Documentos/Rails/felanix'
-alias dibox='cd ~/Documentos/Ionic/dibox'
-# -- Snappler
-alias aptour='cd ~/Documentos/Snappler/aptour'
-alias cxc='cd ~/Documentos/Snappler/cuentas_por_cobrar'
-alias pap='cd ~/Documentos/Snappler/pago_a_proveedores'
-alias oppre='cd ~/Documentos/Snappler/operators	'
-alias cotizador='cd ~/Documentos/Snappler/cotizador-api'
-alias special-tours='cd ~/Documentos/Snappler/specialtours-adapter'
-
 # Git
 alias gstatus='git status'
 alias gadd='git add .'
 alias gcommit='git commit -m $($1)'
-alias glog='git log'
+alias glog='git log --oneline --decorate'
 alias gdiff='git diff'
 alias gpull='git pull'
 alias gpulld='git pull origin develop'
