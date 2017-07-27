@@ -117,6 +117,16 @@ nmap <silent> <leader>t :Tagbar<cr>
 
 " CtrlP
 nnoremap <silent> <leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
+let g:ctrlp_custom_ignore = 'node_modules\|log\|git\|tmp\|vendor'
+
+" Grepper
+let g:grepper = {
+    \ 'tools': ['pt', 'git'],
+    \ 'pt': {
+    \   'grepprg':    'pt --nocolor --nogroup',
+    \   'grepformat': '%f:%l:%m',
+    \   'escape':     '\+*^$()[]',
+    \ }}
 
 " Theme and visual customization
 set t_Co=256
