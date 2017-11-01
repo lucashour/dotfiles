@@ -26,6 +26,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+" highlight all search matches
+set hlsearch
+" press Space to turn off highlighting and clear any message already displayed.
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 set relativenumber
 
 " ========================================================================
