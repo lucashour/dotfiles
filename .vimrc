@@ -1,4 +1,39 @@
-execute pathogen#infect()
+" ========================================================================
+" Plugins
+" ========================================================================
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomtom/tlib_vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jpo/vim-railscasts-theme'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tpope/vim-bundler'
+Plugin 'garbas/vim-snipmate'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'majutsushi/tagbar'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-rails'
+Plugin 'honza/vim-snippets'
+Plugin 'chriskempson/base16-vim'
+Plugin 'mhinz/vim-grepper'
+
+call vundle#end()
+filetype plugin indent on
+
+" ========================================================================
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set guioptions-=T
@@ -104,11 +139,9 @@ set ruler " show the cursor position all the time
 
 " ========================================================================
 
-
 " ========================================================================
-" Plugins
+" Plugins configuration
 " ========================================================================
-
 " NERDTree
 let g:NERDTreeWinPos = "left" " position
 let g:NERDTreeHijackNetrw=0 " closed by default
@@ -142,7 +175,7 @@ highlight nonText ctermbg=NONE
 let g:airline_powerline_fonts = 1
 
 " Powerline
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 
